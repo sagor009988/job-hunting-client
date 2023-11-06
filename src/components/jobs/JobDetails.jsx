@@ -26,7 +26,7 @@ const JobDetails = () => {
                                 <div className='flex gap-4 flex-col justify-center'>
                                     <h2 className='text-2xl font-semibold'>{jobTitle}</h2>
                                     <div className='flex gap-6 items-center'>
-                                        <p className='text-[#153CF5] font-semibold'>{postedBy}</p>
+                                        <p className='text-[#45A600] font-semibold'>{postedBy}</p>
                                         <div className='flex gap-1 font-semibold items-center'>
                                             <BiTime />
                                             <p>{category}</p>
@@ -44,7 +44,7 @@ const JobDetails = () => {
                             </div>
                             <div className='flex items-center gap-8'>
                                 <div>
-                                    <button onClick={() => ApplyPopup(job)} className='bg-[#153CF5] py-1 px-4 rounded-sm hover:bg-[#1bbf72d0] text-white'>Apply Now</button>
+                                    <button onClick={() => ApplyPopup(job)} className='bg-[#153CF5] py-1 px-4 rounded-sm hover:bg-[#153af5cc] text-white'>Apply Now</button>
                                 </div>
                             </div>
                         </div>
