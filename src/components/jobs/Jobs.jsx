@@ -10,12 +10,12 @@ import { Link, NavLink } from 'react-router-dom';
 const JobTabs = () => {
     const { data, isLoading, isFetching } = useJobs();
     const [tabJobs, setTabJobs] = useState(data?.jobs);
-    const [filterJob, setFilterJob] = useState();
 
-    const handleJobsShow = (ctg) => {
-        setCurrentCtg(ctg);
-        setTabJobs(cateroryByJob);
+    const handleFilter = (ctg) => {
+        
+        console.log(ctg);
     }
+
 
 
 
@@ -29,10 +29,10 @@ const JobTabs = () => {
             <div className='py-16 max-w-6xl mx-auto'>
                 <Tabs>
                     <TabList>
-                        <Tab onClick={() => handleJobsShow("all")} key="all">All</Tab>
-                        {data?.categories.map((category) => {
+                        <Tab onClick={() => handleFilter("all")} key="all">All</Tab>
+                        {data?.categories?.map((category) => {
                             return <>
-                                <Tab onClick={() => handleJobsShow(category?.name)} key={category._id}>
+                                <Tab onClick={() => handleFilter(category?.name)} key={category._id}>
                                     {category.name}
                                 </Tab></>
                         })}
@@ -92,3 +92,21 @@ const JobTabs = () => {
 };
 
 export default JobTabs;
+
+
+// Programming-Hero Instructors11:32
+// const App = () => {
+//   const [tabIndex, setTabIndex] = useState(0);
+
+//   return (
+//     <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+//       <TabList>
+//         <Tab>Title 1</Tab>
+//         <Tab>Title 2</Tab>
+//       </TabList>
+//       <TabPanel></TabPanel>
+//       <TabPanel></TabPanel>
+//     </Tabs>
+//   );
+// };
+// https://www.npmjs.com/package/react-tabs

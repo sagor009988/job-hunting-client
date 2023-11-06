@@ -1,10 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import { BiTime } from 'react-icons/bi';
 import { CiLocationOn } from 'react-icons/ci';
+import { ApplyPopup } from "../popup/ApplyPopup";
+
 
 
 const JobDetails = () => {
     const { jobTitle, postingDate, category, postedBy, _id, location } = useLoaderData();
+    const job = { jobTitle, postingDate, category, postedBy, _id, location }
     return (
         <div className="bg-[#F5F7FF]">
             <div className="bg-[url(https://i.ibb.co/ncjQDJS/Rectangle-15.png)] py-16">
@@ -41,7 +44,7 @@ const JobDetails = () => {
                             </div>
                             <div className='flex items-center gap-8'>
                                 <div>
-                                    <button className='bg-[#1bbf73] py-1 px-4 rounded-sm hover:bg-[#1bbf72d0] text-white'>Apply Now</button>
+                                    <button onClick={() => ApplyPopup(job)} className='bg-[#1bbf73] py-1 px-4 rounded-sm hover:bg-[#1bbf72d0] text-white'>Apply Now</button>
                                 </div>
                             </div>
                         </div>
