@@ -101,11 +101,11 @@ const SignUp = () => {
                             }
                         </div>
                         <div className="mb-6">
-                            <input className='bg-[#1bbf73] text-white  py-2 w-full rounded-sm cursor-pointer' type="submit" value="SignUp" />
+                            <input className='bg-[#153CF5] text-white  py-2 w-full rounded-sm cursor-pointer' type="submit" value="SignUp" />
                         </div>
                     </form>
                     <div>
-                        <p className='text-center dark:text-white'>Already have an account? <Link to={'/signin'} className='cursor-pointer text-[#1bbf73]'>SignIn here</Link></p>
+                        <p className='text-center dark:text-white'>Already have an account? <Link to={'/signin'} className='cursor-pointer text-[#153CF5]'>SignIn here</Link></p>
                     </div>
                 </div>
             </div>

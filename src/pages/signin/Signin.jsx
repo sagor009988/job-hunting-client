@@ -92,7 +92,7 @@ const Signin = () => {
                             }
                         </div>
                         <div className="mb-6">
-                            <input className='bg-[#1bbf73] text-white py-2 w-full rounded-sm cursor-pointer' type="submit" value="SignIn" />
+                            <input className='bg-[#153CF5] text-white py-2 w-full rounded-sm cursor-pointer' type="submit" value="SignIn" />
                         </div>
                     </form>
                     <div>
@@ -114,7 +114,7 @@ const Signin = () => {
                             <AiFillGoogleSquare onClick={() => handleGoogleSignin()} className='text-red-600 text-3xl cursor-pointer dark:text-white' />
                         </div>
                         <div>
-                            <p className='text-center dark:text-white'>Don't have an account? <Link to={'/signup'} className='cursor-pointer text-[#1bbf73]'>Register here</Link></p>
+                            <p className='text-center dark:text-white'>Don't have an account? <Link to={'/signup'} className='cursor-pointer text-[#153CF5]'>Register here</Link></p>
                         </div>
                     </div>
 

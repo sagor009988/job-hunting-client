@@ -31,7 +31,7 @@ const Footer = () => {
                     <h2 className="text-[#94A3B8] mb-6 font-bold text-xl">Newsletter</h2>
                     <div className="flex justify-end">
                         <input className="py-2 w-full px-2 rounded-l-sm" placeholder="Enter your email" type="email" />
-                        <input className="py-2 px-6 bg-[#1bbf73] rounded-r-sm text-white" type="submit" value="SignUp" />
+                        <input className="py-2 px-6 bg-[#153CF5] rounded-r-sm text-white" type="submit" value="SignUp" />
                     </div>
                 </div>
             </div>

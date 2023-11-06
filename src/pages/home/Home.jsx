@@ -16,7 +16,7 @@ const Home = () => {
             <div>
                 <HowWork />
             </div>
-            <div className='bg-white shadow dark:bg-black dark:text-white p-4 rounded'>
+            <div className='bg-white  dark:bg-black dark:text-white p-4 rounded'>
                 {
                     <JobTabs />
                 }

@@ -25,7 +25,7 @@ const Header = () => {
 
 
     return (
-        <div className="bg-[#1bbf73] shadow-md">
+        <div className="bg-[#153CF5] shadow-md">
             {/* mobile and tablet navbar */}
             <nav className="md:flex justify-between items-center py-2 max-w-6xl mx-auto flex lg:hidden p-2 lg:px-0">
                 <ul>

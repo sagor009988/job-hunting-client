@@ -6,12 +6,13 @@ import Loading from './../loading/Loading';
 import { BiTime } from 'react-icons/bi';
 import { CiLocationOn } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
+import './tab.css';
 
 const JobTabs = () => {
     const { data, isLoading, isFetching } = useJobs();
-    const [tabJobs, setTabJobs] = useState([]);
-    const [ctgName, setCtgName] = useState(null);
-    console.log(ctgName);
+    const [tabJobs, setTabJobs] = useState(data?.jobs);
+    const [ctgName, setCtgName] = useState('all');
+    const [showVal, setShowVal] = useState(3);
 
     const handleJobsFilter = (ctg) => {
         setCtgName(ctg);
@@ -25,6 +26,7 @@ const JobTabs = () => {
             console.log(filterData);
             setTabJobs(filterData);
         }
+        setShowVal(3);
     }, [ctgName, data]);
 
 
@@ -52,7 +54,7 @@ const JobTabs = () => {
                             </Tab>
                         ))}
                     </TabList>
-                    {tabJobs?.map((job) => (
+                    {tabJobs?.slice(0, showVal).map((job) => (
                         <div key={job?._id} className='bg-white dark-bg-[#26272D]'>
                             <div className='flex mt-6 p-4 border shadow-sm rounded justify-between'>
                                 <div className='flex'>
@@ -66,7 +68,7 @@ const JobTabs = () => {
                                     <div className='flex gap-4 flex-col justify-center'>
                                         <h2 className='text-xl font-semibold'>{job?.jobTitle}</h2>
                                         <div className='flex gap-6 items-center'>
-                                            <p className='text-[#1bbf73] font-semibold'>
+                                            <p className='text-[#45A600] font-semibold'>
                                                 {job?.postedBy}
                                             </p>
                                             <div className='flex gap-1 font-semibold items-center'>
@@ -86,12 +88,12 @@ const JobTabs = () => {
                                 </div>
                                 <div className='flex items-center gap-8'>
                                     <div>
-                                        <Link to={`/job/${job?._id}`} className='border-[#1bbf73] border py-1 px-4 rounded-sm hover:bg-[#1bbf73] hover:text-white'>
+                                        <Link to={`/job/${job?._id}`} className='border-[#153CF5] border py-1 px-4 rounded-sm hover:bg-[#153CF5] hover:text-white block'>
                                             View Job
                                         </Link>
                                     </div>
                                     <div>
-                                        <button className='bg-[#1bbf73] py-1 px-4 rounded-sm hover-bg-[#1bbf72d0] text-white'>
+                                        <button className='bg-[#153CF5] py-1 px-4 rounded-sm hover-bg-[#1bbf72d0] text-white  block'>
                                             Apply Now
                                         </button>
                                     </div>
@@ -100,14 +102,17 @@ const JobTabs = () => {
                         </div>
                     ))}
 
-
-                    <div className='flex items-center justify-center py-8'>
-                        <div>
-                            <button className='border-[#1bbf73] border py-1 px-4 rounded-sm hover-bg-[#1bbf73] hover-text-white font-medium'>
-                                Load More Jobs
-                            </button>
-                        </div>
-                    </div>
+                    {
+                        tabJobs?.length > showVal ? (
+                            <div className='flex items-center justify-center py-8'>
+                                <div>
+                                    <button onClick={() => setShowVal(showVal + 3)} className='border-[#153CF5] border py-1 px-4 rounded-sm hover:bg-[#153CF5] hover:text-white hover-text-white font-medium'>
+                                        Load More Jobs
+                                    </button>
+                                </div>
+                            </div>
+                        ) : null
+                    }
                 </Tabs>
             </div>
         </div>

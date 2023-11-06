@@ -10,7 +10,7 @@ const SignUpBanner = () => {
                 </div>
                 <div className="flex justify-end">
                     <input className="py-2 w-3/6 px-2 rounded-l-sm" placeholder="Enter your email" type="email" />
-                    <input className="py-2 px-6 bg-[#1bbf73] rounded-r-sm text-white" type="submit" value="SignUp" />
+                    <input className="py-2 px-6 bg-[#153CF5] rounded-r-sm text-white" type="submit" value="SignUp" />
                 </div>
             </div>
         </div>
