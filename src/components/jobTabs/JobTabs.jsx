@@ -7,7 +7,7 @@ import './tab.css';
 import JobTab from './JobTab';
 
 const JobTabs = () => {
-    const { data, isLoading, isFetching } = useJobs();
+    const { data, isLoading, isFetching, refetch } = useJobs();
     const [tabJobs, setTabJobs] = useState(data?.jobs);
     const [ctgName, setCtgName] = useState('all');
     const [showVal, setShowVal] = useState(3);
@@ -52,7 +52,7 @@ const JobTabs = () => {
                             </Tab>
                         ))}
                     </TabList>
-                    {tabJobs?.slice(0, showVal).map((job) => <JobTab key={job._id} job={job} />)}
+                    {tabJobs?.slice(0, showVal)?.map((job) => <JobTab key={job._id} job={job} refetch={refetch} />)}
 
                     {
                         tabJobs?.length > showVal ? (

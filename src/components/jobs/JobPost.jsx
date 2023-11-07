@@ -75,11 +75,8 @@ const JobPost = () => {
 
     return (
         <div className="max-w-6xl mx-auto py-16">
-            <div>
-                <h2 className="bg-blue-700 p-2 text-center text-3xl text-white">Post a job</h2>
-            </div>
-            <div className="my-16 border rounded-sm p-4 grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-8 px-2 md:px-4">
-                <div className="col-span-3">
+            <div className="my-16 border rounded-sm p-4 px-2 md:px-4">
+                <div>
                     <h2 className="font-bold text-2xl mb-4">Post a job</h2>
                     <form onSubmit={handleJobPost}>
 
@@ -122,10 +119,6 @@ const JobPost = () => {
                         <textarea className="h-44 p-1 mb-4 rounded border w-full" type="text" name='description' placeholder="Job short description" /> <br />
                         <input className="p-1 mb-4 rounded bg-blue-700 w-full text-white" type="submit" value={'Post'} />
                     </form>
-                </div>
-                <div className="space-y-8">
-                    <h2 className="font-bold text-2xl">Create one if you need:</h2>
-
                 </div>
             </div>
         </div>

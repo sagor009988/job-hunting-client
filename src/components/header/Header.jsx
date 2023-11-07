@@ -55,10 +55,10 @@ const Header = () => {
                                 <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : ""}>Home</NavLink>
                             </li>
                             <li className="text-xl">
-                                <NavLink to="/addproducts" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : ""}>Add product</NavLink>
+                                <NavLink to="/jobpost" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : ""}>Post a job</NavLink>
                             </li>
                             <li className="text-xl">
-                                <NavLink to="/brands" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : ""}>Brands</NavLink>
+                                <NavLink to="/applied" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : ""}>applied</NavLink>
                             </li>
                             <li className="text-xl">
                                 <NavLink to={`/carts`} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : ""}>Carts</NavLink>
@@ -91,10 +91,10 @@ const Header = () => {
                         <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : "text-white"}>Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/addproducts" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : "text-white"}>Add product</NavLink>
+                        <NavLink to="/jobpost" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : "text-white"}>Post a job</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/brands" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : "text-white"}>Brands</NavLink>
+                        <NavLink to="/applied" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : "text-white"}>applied</NavLink>
                     </li>
                     <li>
                         <NavLink to={`/carts`} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : "text-white"}>Carts</NavLink>

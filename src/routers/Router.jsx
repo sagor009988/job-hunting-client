@@ -5,6 +5,7 @@ import MainLayout from './../layout/MainLayout';
 import SignUp from "../pages/signUp/SignUp";
 import JobDetails from "../components/jobs/JobDetails";
 import JobPost from "../components/jobs/JobPost";
+import AppliedJobs from "../components/jobs/AppliedJobs";
 
 const router = createBrowserRouter([
     {
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home/>
+                element: <Home />
             },
             {
                 path: '/signin',
@@ -21,16 +22,21 @@ const router = createBrowserRouter([
             },
             {
                 path: '/signup',
-                element: <SignUp/>
+                element: <SignUp />
             },
             {
                 path: '/job/:id',
                 element: <JobDetails />,
-                loader: ({params})=> fetch(`http://localhost:5000/job/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/job/${params.id}`)
             },
             {
                 path: 'jobpost',
                 element: <JobPost />
+            },
+            {
+                path: 'applied',
+                element: <AppliedJobs />,
+                loader: ()=> fetch('http://localhost:5000/applied')
             }
         ]
     },
