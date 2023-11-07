@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { BiTime } from 'react-icons/bi';
 import { CiLocationOn } from 'react-icons/ci';
-import { ApplyPopup } from "../popup/ApplyPopup";
 
 
 
