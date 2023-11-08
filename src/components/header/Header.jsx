@@ -61,7 +61,7 @@ const Header = () => {
                                 <NavLink to="/applied" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : ""}>applied</NavLink>
                             </li>
                             <li className="text-xl">
-                                <NavLink to={`/carts`} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : ""}>Carts</NavLink>
+                                <NavLink to={`/myjob`} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : ""}>My jobs</NavLink>
                             </li>
                             {
                                 user ? <>
@@ -97,7 +97,7 @@ const Header = () => {
                         <NavLink to="/applied" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : "text-white"}>applied</NavLink>
                     </li>
                     <li>
-                        <NavLink to={`/carts`} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : "text-white"}>Carts</NavLink>
+                        <NavLink to={`/myjob`} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-white font-semibold" : "text-white"}>My jobs</NavLink>
                     </li>
                     {
                         user ? <>

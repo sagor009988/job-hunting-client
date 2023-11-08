@@ -1,18 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
-import AppliedJob from "./AppliedJob";
+import React, { useContext, useEffect, useState } from 'react';
+import MyJob from './MyJob';
+import { AuthContext } from '../../providers/AuthProvider';
 
-const AppliedJobs = () => {
+const MyJobs = () => {
     const { user } = useContext(AuthContext);
-    const [appliedJob, setAppliedJob] = useState([]);
+    const [jobs, setJobs] = useState([]);
 
-    const url = `http://localhost:5000/applied?email=${user?.email}`;
+    const url = `http://localhost:5000/myjobs?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
-            .then(data => setAppliedJob(data))
+            .then(data => setJobs(data))
     }, [user])
-
     return (
         <div>
             <div className="bg-[url(https://i.ibb.co/ncjQDJS/Rectangle-15.png)] py-16">
@@ -21,14 +20,14 @@ const AppliedJobs = () => {
                 </div>
             </div>
             <div className="py-16 max-w-6xl mx-auto">
-                {appliedJob?.length == 0 ? (
-                    <p>No applied jobs found.</p>
+                {jobs?.length == 0 ? (
+                    <p>No jobs found.</p>
                 ) : (
-                    appliedJob?.map((job) => <AppliedJob key={job._id} job={job}></AppliedJob>)
+                    jobs?.map((job) => <MyJob key={job._id} job={job}></MyJob>)
                 )}
             </div>
         </div>
     );
 };
 
-export default AppliedJobs;
+export default MyJobs;
