@@ -25,6 +25,10 @@ const AppliedJob = ({ job }) => {
                                     <CiLocationOn />
                                     <p>{location}</p>
                                 </div>
+                                <div className='hidden md:flex gap-1 top-0 right-0  font-semibold items-center text-[10px] md:text-base'>
+                                    <BiTime />
+                                    <p>$ Salary: {salary}</p>
+                                </div>
                                 <div className='flex gap-1 font-semibold items-center text-[10px] md:text-base'>
                                     <BsPeople />
                                     <p>Applied: {applied} </p>
