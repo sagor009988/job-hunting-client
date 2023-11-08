@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { BiTime } from 'react-icons/bi';
 import { BsPeople } from 'react-icons/bs';
 import { CiLocationOn } from 'react-icons/ci';
+import { toast } from "react-toastify";
 
 
-const MyJob = ({job}) => {
+const MyJob = ({ job }) => {
     const { _id, jobTitle, category, postbanner, salary, description, gender, qualification, eduRequirements, applied, postBy, postEmail, expirationDate, statement, location } = job;
 
     function calculateRemainingTime() {
@@ -44,6 +45,15 @@ const MyJob = ({job}) => {
     }, [remainingTime]);
 
 
+    const handleDeteleJob = (_id) => {
+        fetch(`http://localhost:5000/jobsDelete/${_id}`, {
+            method: 'DELETE'
+        })
+            .then(res => toast.success('Job deleted successfully.'))
+            .then(data => console.log(data))
+    }
+
+
     return (
         <div key={_id} className='bg-white dark-bg-[#26272D]'>
             <div className='flex mt-6 p-4 border shadow-sm rounded justify-between'>
@@ -76,13 +86,13 @@ const MyJob = ({job}) => {
                 </div>
                 <div className='flex items-center gap-2'>
                     <div>
-                        <Link to={`/job/${_id}`} className='border-[#153CF5] border py-1 px-2 md:px-4 rounded-sm hover.bg-[#153CF5] hover.text-white block text-[10px] md:text-base'>
-                            View Job
+                        <Link to={`/updatesjob/${_id}`} className='border-[#153CF5] border py-1 px-2 md:px-4 rounded-sm hover.bg-[#153CF5] hover.text-white block text-[10px] md:text-base'>
+                            Update
                         </Link>
                     </div>
                     <div>
-                        <button disabled={remainingTime === 'Expired'} className={remainingTime !== 'Expired' ? ' border py-1 px-2 md:px-4 rounded-sm bg-[#153CF5] hover.bg-[#153af5d6] text-white block text-[10px]  md:text-base' : ' border py-1 px-2 md:px-4 rounded-sm bg-[#153af58e]  text-white block text-[10px] md:text-base'}>
-                            Apply Now
+                        <button onClick={() => handleDeteleJob(_id)} className=' border py-1 px-2 md:px-4 rounded-sm bg-[red]  text-white block text-[10px] md:text-base'>
+                            Delete
                         </button>
                     </div>
 

@@ -6,7 +6,7 @@ const AppliedJobs = () => {
     const { user } = useContext(AuthContext);
     const [appliedJob, setAppliedJob] = useState([]);
 
-    const url = `http://localhost:5000/applied?email=${user?.email}`;
+    const url = `http://localhost:5000/appliedjob?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

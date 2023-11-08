@@ -16,7 +16,7 @@ const MyJobs = () => {
         <div>
             <div className="bg-[url(https://i.ibb.co/ncjQDJS/Rectangle-15.png)] py-16">
                 <div className=" h-72 flex items-center justify-center">
-                    <h1 className='text-4xl text-white font-bold mb-2'>Applied Jobs</h1>
+                    <h1 className='text-4xl text-white font-bold mb-2'>My Jobs</h1>
                 </div>
             </div>
             <div className="py-16 max-w-6xl mx-auto">
@@ -31,3 +31,4 @@ const MyJobs = () => {
 };
 
 export default MyJobs;
+

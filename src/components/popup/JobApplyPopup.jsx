@@ -17,11 +17,11 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
         const resumeLink = form.resumeLink.value;
 
         const applyFor = {
-            candidateName, candidateEamil, resumeLink, _id, jobTitle, category, postbanner, salary, description, gender, qualification, eduRequirements, applied, postBy, postEmail, expirationDate, statement, location
+            candidateName, candidateEamil, resumeLink, jobTitle, category, postbanner, salary, description, gender, qualification, eduRequirements, applied, postBy, postEmail, expirationDate, statement, location
         }
 
 
-        fetch('http://localhost:5000/applied', {
+        fetch('http://localhost:5000/appliedjob', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -32,24 +32,19 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
             .then(data => console.log(data))
 
 
-        // ...
+
         const newCount = parseInt(applied) + 1;
-        fetch(`http://localhost:5000/jobs/${_id}`, {
+        fetch(`http://localhost:5000/count/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ newCount }), // Corrected the body to send the count value
+            body: JSON.stringify({ newCount }),
         })
             .then(res => refetch())
             .catch();
 
     }
-
-
-
-
-
 
     if (!isOpen || !job) return null;
 
