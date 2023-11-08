@@ -10,10 +10,13 @@ import MyJobs from "../components/jobs/MyJobs";
 import UpdateJobPost from "../components/jobs/UpdateJobPost";
 import JobTabs from "../components/jobTabs/JobTabs";
 import AllJobs from "../pages/allJobs/AllJobs";
+import PrivateRoute from './PrivateRoute';
+import Error from './../pages/404';
 
 const router = createBrowserRouter([
     {
         path: "/",
+        errorElement: <Error />,
         element: <MainLayout />,
         children: [
             {
@@ -43,7 +46,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'myjob',
-                element: <MyJobs />
+                element: <PrivateRoute><MyJobs /></PrivateRoute>
             },
             {
                 path: 'updatesjob/:id',
