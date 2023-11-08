@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import { BiTime } from 'react-icons/bi';
 import { BsPeople } from 'react-icons/bs';
 import { CiLocationOn } from 'react-icons/ci';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Popup from "../popup/JobApplyPopup";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const JobTab = ({ job, refetch }) => {
+    const { user } = useContext(AuthContext);
     const { _id, jobTitle, category, postbanner, salary, description, gender, qualification, eduRequirements, applied, postBy, postEmail, expirationDate, statement, location } = job;
 
     function calculateRemainingTime() {
@@ -90,9 +92,12 @@ const JobTab = ({ job, refetch }) => {
                         </Link>
                     </div>
                     <div>
-                        <button onClick={openPopup} disabled={remainingTime === 'Expired'} className={remainingTime !== 'Expired' ? ' border py-1 px-2 md:px-4 rounded-sm bg-[#153CF5] hover.bg-[#153af5d6] text-white block text-[10px]  md:text-base' : ' border py-1 px-2 md:px-4 rounded-sm bg-[#153af58e]  text-white block text-[10px] md:text-base'}>
-                            Apply Now
-                        </button>
+                        {
+                            user?.email !== postEmail ? <>
+                                <button onClick={openPopup} disabled={remainingTime === 'Expired'} className={remainingTime !== 'Expired' ? ' border py-1 px-2 md:px-4 rounded-sm bg-[#153CF5] hover.bg-[#153af5d6] text-white block text-[10px]  md:text-base' : ' border py-1 px-2 md:px-4 rounded-sm bg-[#153af58e]  text-white block text-[10px] md:text-base'}>
+                                    Apply Now
+                                </button></> : null
+                        }
                     </div>
 
                     <Popup isOpen={isPopupOpen} onClose={closePopup} refetch={refetch} job={job} />

@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="bg-[#020A31] py-16">
             <div className="grid grid-cols-1 md:grid-cols-6 justify-between gap-6 max-w-6xl mx-auto">
                 <div className="col-span-2">
-                    <h2 className="text-4xl font-bold text-[#F5F7FF] mb-6">LOGO</h2>
+                    <h2 className="text-3xl font-bold text-[#F5F7FF] mb-6">CAREER LINK</h2>
                     <p className="w-2/3 text-[#F5F7FF]">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. </p>
                 </div>
                 <div className="text-[#94A3B8]">
@@ -35,7 +35,10 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </div>
+            <div className="max-w-6xl mx-auto text-white text-center border-t py-4">
+                <p>All &copy; Copyright reserved by Career Link</p>
+            </div>
+        </div >
     );
 };
 

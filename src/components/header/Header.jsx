@@ -86,7 +86,7 @@ const Header = () => {
             {/* desktop navbar  */}
             <nav className="md:hidden justify-between items-center py-2 max-w-6xl mx-auto hidden lg:flex">
                 <ul>
-                    <li><NavLink className={'text-xl font-extrabold'}><p className='text-2xl text blod font-bold text-white'>TECH ZONE</p>
+                    <li><NavLink className={'text-xl font-extrabold'}><p className='text-2xl text blod font-bold text-white'>CAREER LINK</p>
                     </NavLink></li>
                 </ul>
                 <ul className="flex items-center gap-6">

@@ -1,16 +1,18 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { BiTime } from 'react-icons/bi';
 import { CiLocationOn } from 'react-icons/ci';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BsPeople } from 'react-icons/bs';
 import Popup from "../popup/JobApplyPopup";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 
 const JobDetails = () => {
-    const { jobTitle, postingDate, postbanner, category, postedBy, _id, description, salary, gender, eduRequirements, applied, postBy, expirationDate, statement, location, responsibilities } = useLoaderData();
+    const { user } = useContext(AuthContext)
+    const { jobTitle, postingDate, postbanner, category, postedBy, _id, description, salary, gender, eduRequirements, postEmail, applied, postBy, expirationDate, statement, location, responsibilities } = useLoaderData();
 
-    const job = { jobTitle, postingDate, postbanner, category, postedBy, _id, description, salary, gender, eduRequirements, applied, postBy, expirationDate, statement, location, responsibilities };
+    const job = { jobTitle, postingDate, postbanner, category, postedBy, _id, description, salary, gender, eduRequirements, postEmail, applied, postBy, expirationDate, statement, location, responsibilities };
 
 
 
@@ -69,9 +71,6 @@ const JobDetails = () => {
             </div>
             <div className="max-w-6xl mx-auto  py-4">
                 <div>
-
-
-
                     <div key={_id} className='bg-white dark-bg-[#26272D]'>
                         <div className='flex mt-6 p-4 border shadow-sm rounded justify-between'>
                             <div className='flex gap-1 md:gap-2'>
@@ -103,9 +102,12 @@ const JobDetails = () => {
                             </div>
                             <div className='flex items-center gap-2'>
                                 <div>
-                                    <button onClick={openPopup} disabled={remainingTime === 'Expired'} className={remainingTime !== 'Expired' ? ' border py-1 px-2 md:px-4 rounded-sm bg-[#153CF5] hover.bg-[#153af5d6] text-white block text-[10px]  md:text-base' : ' border py-1 px-2 md:px-4 rounded-sm bg-[#153af58e]  text-white block text-[10px] md:text-base'}>
-                                        Apply Now
-                                    </button>
+                                    {
+                                        user?.email !== postEmail ? <>
+                                            <button onClick={openPopup} disabled={remainingTime === 'Expired'} className={remainingTime !== 'Expired' ? ' border py-1 px-2 md:px-4 rounded-sm bg-[#153CF5] hover.bg-[#153af5d6] text-white block text-[10px]  md:text-base' : ' border py-1 px-2 md:px-4 rounded-sm bg-[#153af58e]  text-white block text-[10px] md:text-base'}>
+                                                Apply Now
+                                            </button></> : null
+                                    }
                                 </div>
 
                                 <Popup isOpen={isPopupOpen} onClose={closePopup} job={job} />
