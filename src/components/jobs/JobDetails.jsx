@@ -89,6 +89,9 @@ const JobDetails = () => {
                                                 remainingTime == 'Expired' ? <p className="text-[red]">{remainingTime}</p> : <p>{remainingTime}</p>
                                             }
                                         </div>
+                                        <div className='hidden md:flex gap-1 top-0 right-0  font-semibold items-center text-[10px] md:text-base'>
+                                            <p>$Salary: {salary}</p>
+                                        </div>
                                         <div className='flex gap-1 font-semibold items-center text-[10px] md:text-base'>
                                             <CiLocationOn />
                                             <p>{location}</p>
@@ -118,7 +121,7 @@ const JobDetails = () => {
                     {/* job details */}
 
                 </div>
-                <div className="grid grid-cols-6 gap-6 py-10">
+                <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 py-10">
                     <div className="col-span-4">
                         <div className="mb-4">
                             <h1 className="text-[#020A31] font-bold text-2xl">Description</h1>
