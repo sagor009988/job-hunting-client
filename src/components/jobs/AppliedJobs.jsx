@@ -22,8 +22,6 @@ const AppliedJobs = () => {
     }, [user]);
 
 
-
-
     const { data, isLoading, isFetching, refetch } = useJobs();
     const [ctgName, setCtgName] = useState('all');
     const [showVal, setShowVal] = useState(3);
@@ -64,19 +62,28 @@ const AppliedJobs = () => {
                             </Tab>
                         ))}
                     </TabList>
-                    {appliedJob?.slice(0, showVal)?.map((job) => <JobTab key={job._id} job={job} refetch={refetch} />)}
-
                     {
-                        appliedJob?.length > showVal ? (
-                            <div className='flex items-center justify-center py-8'>
-                                <div>
-                                    <button onClick={() => setShowVal(showVal + 3)} className='border-[#153CF5] border py-1 px-4 rounded-sm hover:bg-[#153CF5] hover:text-white hover-text-white font-medium'>
-                                        Load More Jobs
-                                    </button>
-                                </div>
+                        appliedJob?.length == 0 ? <>
+                            <div className="text-center py-4">
+                                <p>No data found</p>
                             </div>
-                        ) : null
+                        </> : <>
+                            {appliedJob?.slice(0, showVal)?.map((job) => <JobTab key={job._id} job={job} refetch={refetch} />)}
+
+                            {
+                                appliedJob?.length > showVal ? (
+                                    <div className='flex items-center justify-center py-8'>
+                                        <div>
+                                            <button onClick={() => setShowVal(showVal + 3)} className='border-[#153CF5] border py-1 px-4 rounded-sm hover:bg-[#153CF5] hover:text-white hover-text-white font-medium'>
+                                                Load More Jobs
+                                            </button>
+                                        </div>
+                                    </div>
+                                ) : null
+
+                            }</>
                     }
+
                 </Tabs>
             </div>
         </div>

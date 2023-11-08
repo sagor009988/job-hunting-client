@@ -70,7 +70,15 @@ const AllJobs = () => {
                             </Tab>
                         ))}
                     </TabList>
-                    {tabJobs?.slice(0, showVal)?.map((job) => <JobTab key={job._id} job={job} refetch={refetch} />)}
+                    {
+                        tabJobs?.length == 0 ? <>
+                            <div className="text-center py-4">
+                                <p>No data found</p>
+                            </div>
+                        </> : <>
+                            {tabJobs?.slice(0, showVal)?.map((job) => <JobTab key={job._id} job={job} refetch={refetch} />)}
+                        </>
+                    }
 
                     {
                         tabJobs?.length > showVal ? (
