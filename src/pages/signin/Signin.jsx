@@ -49,7 +49,7 @@ const Signin = () => {
                     setErrPass('');
                     toast.success('Login successfully.');
                     location.state ? navigate(location.state) : navigate('/');
-                    fetch('http://localhost:5000/jwt', {
+                    fetch('https://brand-server-pi.vercel.app/jwt', {
                         method: 'POST',
                         credentials: 'include',
                         headers: {

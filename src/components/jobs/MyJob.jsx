@@ -4,6 +4,7 @@ import { BiTime } from 'react-icons/bi';
 import { BsPeople } from 'react-icons/bs';
 import { CiLocationOn } from 'react-icons/ci';
 import { toast } from "react-toastify";
+import swal from "sweetalert";
 
 
 const MyJob = ({ job }) => {
@@ -45,12 +46,42 @@ const MyJob = ({ job }) => {
     }, [remainingTime]);
 
 
-    const handleDeteleJob = (_id) => {
-        fetch(`http://localhost:5000/jobsDelete/${_id}`, {
-            method: 'DELETE'
-        })
-            .then(res => toast.success('Job deleted successfully.'))
-            .then(data => console.log(data))
+    // const handleDeteleJob = (_id) => {
+    //     fetch(`https://brand-server-pi.vercel.app/jobsDelete/${_id}`, {
+    //         method: 'DELETE'
+    //     })
+    //         .then(res => toast.success('Job deleted successfully.'))
+    //         .then(data => console.log(data))
+    // }
+
+
+    const handleDeteleJob = _id => {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this product!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then(willDelete => {
+            if (willDelete) {
+
+                fetch(`https://brand-server-pi.vercel.app/jobsDelete/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => toast.success('Job deleted successfully.'))
+                    .then(data => {
+                        console.log(data);
+                        swal("Poof! Your product has been deleted!", {
+                            icon: "success",
+                        })
+                            .then()
+                    })
+
+                    .catch(error => {
+                        console.error("Error deleting the product: ", error);
+                    });
+            }
+        });
     }
 
 

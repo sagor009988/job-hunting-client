@@ -21,7 +21,7 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
         }
 
 
-        fetch('http://localhost:5000/appliedjob', {
+        fetch('https://brand-server-pi.vercel.app/appliedjob', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +34,7 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
 
 
         const newCount = parseInt(applied) + 1;
-        fetch(`http://localhost:5000/count/${_id}`, {
+        fetch(`https://brand-server-pi.vercel.app/count/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

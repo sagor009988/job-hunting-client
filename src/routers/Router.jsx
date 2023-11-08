@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             {
                 path: '/job/:id',
                 element: <JobDetails />,
-                loader: ({ params }) => fetch(`http://localhost:5000/job/${params.id}`)
+                loader: ({ params }) => fetch(`https://brand-server-pi.vercel.app/job/${params.id}`)
             },
             {
                 path: 'jobpost',
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
             {
                 path: 'updatesjob/:id',
                 element: <UpdateJobPost />,
-                loader: ({ params }) => fetch(`http://localhost:5000/job/${params.id}`)
+                loader: ({ params }) => fetch(`https://brand-server-pi.vercel.app/job/${params.id}`)
 
             },
             {

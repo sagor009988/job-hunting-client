@@ -47,7 +47,7 @@ const JobPost = () => {
         };
  
 
-        fetch('http://localhost:5000/jobs', {
+        fetch('https://brand-server-pi.vercel.app/jobs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -64,7 +64,7 @@ const JobPost = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://brand-server-pi.vercel.app/categories')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

@@ -47,7 +47,7 @@ const UpdateJobPost = () => {
         };
         console.log(newJob);
 
-        fetch(`http://localhost:5000/jobs/${_id}`, {
+        fetch(`https://brand-server-pi.vercel.app/jobs/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const UpdateJobPost = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://brand-server-pi.vercel.app/categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);

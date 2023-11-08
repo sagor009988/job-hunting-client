@@ -6,11 +6,13 @@ const MyJobs = () => {
     const { user } = useContext(AuthContext);
     const [jobs, setJobs] = useState([]);
 
-    const url = `http://localhost:5000/myjobs?email=${user?.email}`;
+    const url = `https://brand-server-pi.vercel.app/myjobs?email=${user?.email}`;
     useEffect(() => {
-        fetch(url)
+        fetch(url, {
+            credentials: "include"
+        })
             .then(res => res.json())
-            .then(data => setJobs(data))
+            .then(data => setJobs(data)) 
     }, [user])
     return (
         <div>
