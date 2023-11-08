@@ -15,8 +15,8 @@ export const useTheme = () => {
         if (mode == 'light') {
             html.classList.remove('light');
             html.classList.add('dark');
-            localStorage.setItem('theme-mode', JSON.stringify('dark'));
-            const updateMode = localStorage.getItem('theme-mode');
+            localStorage.setItem('theme-mode.', JSON.stringify('dark'));
+            const updateMode = localStorage.getItem('theme-mode.');
             setMode(JSON.parse(updateMode));
         } else {
             html.classList.remove('dark');
