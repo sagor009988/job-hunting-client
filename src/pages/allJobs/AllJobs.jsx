@@ -6,6 +6,7 @@ import '../../components/jobTabs/tab.css';
 import Loading from '../../components/loading/Loading';
 import JobTab from '../../components/jobTabs/JobTab'; 
 
+
 const AllJobs = () => {
     const { data, isLoading, isFetching, refetch } = useJobs();
     const [tabJobs, setTabJobs] = useState(data?.jobs);

@@ -47,7 +47,7 @@ const UpdateJobPost = () => {
         };
         console.log(newJob);
 
-        fetch(`https://brand-server-pi.vercel.app/jobs/${_id}`, {
+        fetch(`https://assignment11-five.vercel.app/jobs/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const UpdateJobPost = () => {
     };
 
     useEffect(() => {
-        fetch('https://brand-server-pi.vercel.app/categories')
+        fetch('https://assignment11-five.vercel.app/categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
@@ -116,7 +116,7 @@ const UpdateJobPost = () => {
                         <textarea defaultValue={description} className="h-44 p-1 mb-4 rounded border w-full" type="text" name='description' placeholder="Job short description" /> <br />
                         <label className="font-bold" htmlFor="responsibilities">Responsibilities</label><br />
                         <textarea defaultValue={responsibilities} className="h-20 p-1 mb-4 rounded border w-full" type="text" name='responsibilities' placeholder="Responsibilities" /> <br />
-                        <input className="p-1 mb-4 rounded bg-blue-700 w-full text-white" type="submit" value={'Post'} />
+                        <input className="p-1 mb-4 rounded bg-blue-700 w-full text-white" type="submit" value={'Update'} />
                     </form>
                 </div>
             </div>

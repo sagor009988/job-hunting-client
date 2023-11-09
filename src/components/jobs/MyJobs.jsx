@@ -1,19 +1,23 @@
 import React, { useContext, useEffect, useState } from 'react';
 import MyJob from './MyJob';
 import { AuthContext } from '../../providers/AuthProvider';
+import axios from 'axios';
 
 const MyJobs = () => {
     const { user } = useContext(AuthContext);
     const [jobs, setJobs] = useState([]);
 
-    const url = `https://brand-server-pi.vercel.app/myjobs?email=${user?.email}`;
+    const url = `https://assignment11-five.vercel.app/myjobs?email=${user?.email}`;
     useEffect(() => {
-        fetch(url, {
-            credentials: "include"
-        })
-            .then(res => res.json())
-            .then(data => setJobs(data)) 
-    }, [user])
+        axios.get(url, { withCredentials: true })
+            .then(response => {
+                setJobs(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, [user]);
+
     return (
         <div>
             <div className="bg-[url(https://i.ibb.co/ncjQDJS/Rectangle-15.png)] py-16">

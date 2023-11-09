@@ -12,6 +12,8 @@ import JobTabs from "../components/jobTabs/JobTabs";
 import AllJobs from "../pages/allJobs/AllJobs";
 import PrivateRoute from './PrivateRoute';
 import Error from './../pages/404';
+import SingleBlgs from "../components/bolgs/SingleBlgs";
+import BlogsPage from "../pages/signUp/BlogsPage";
 
 const router = createBrowserRouter([
     {
@@ -34,7 +36,7 @@ const router = createBrowserRouter([
             {
                 path: '/job/:id',
                 element: <JobDetails />,
-                loader: ({ params }) => fetch(`https://brand-server-pi.vercel.app/job/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment11-five.vercel.app/job/${params.id}`)
             },
             {
                 path: 'jobpost',
@@ -51,12 +53,21 @@ const router = createBrowserRouter([
             {
                 path: 'updatesjob/:id',
                 element: <UpdateJobPost />,
-                loader: ({ params }) => fetch(`https://brand-server-pi.vercel.app/job/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment11-five.vercel.app/job/${params.id}`)
 
             },
             {
                 path: 'alljobs',
                 element: <AllJobs />
+            },
+            {
+                path: 'blog/:id',
+                element: <SingleBlgs />,
+                loader: ({ params }) => fetch(`https://assignment11-five.vercel.app/blogs/${params.id}`)
+            },
+            {
+                path: 'blogpage',
+                element: <BlogsPage />
             }
         ]
     },

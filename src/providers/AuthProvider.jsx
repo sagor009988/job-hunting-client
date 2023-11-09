@@ -46,10 +46,10 @@ const AuthProvider = ({ children }) => {
             const userEmail = currentUser?.email || user?.email;
             const loggedUser = { email: userEmail }
             if (currentUser) {
-                axios.post('https://brand-server-pi.vercel.app/jwt', loggedUser, { withCredentials: true })
+                axios.post('https://assignment11-five.vercel.app/jwt', loggedUser, { withCredentials: true })
                     .then(res => console.log(res.data))
             } else {
-                axios.post('https://brand-server-pi.vercel.app/logout', loggedUser, { withCredentials: true })
+                axios.post('https://assignment11-five.vercel.app/logout', loggedUser, { withCredentials: true })
                     .then(res => { console.log(res.data) })
             }
         });

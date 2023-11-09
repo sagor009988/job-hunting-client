@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { GrClose } from 'react-icons/gr';
 import { AuthContext } from './../../providers/AuthProvider';
 import { toast } from 'react-toastify';
+import { Link, Navigate } from 'react-router-dom';
 
 
 const Popup = ({ isOpen, onClose, job, refetch }) => {
@@ -21,7 +22,7 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
         }
 
 
-        fetch('https://brand-server-pi.vercel.app/appliedjob', {
+        fetch('https://assignment11-five.vercel.app/appliedjob', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +35,7 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
 
 
         const newCount = parseInt(applied) + 1;
-        fetch(`https://brand-server-pi.vercel.app/count/${_id}`, {
+        fetch(`https://assignment11-five.vercel.app/count/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -56,23 +57,31 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
                     &times;
                 </button>
                 <div className="relative">
-                    <GrClose className="absolute -right-2 -top-2 md:-top-4 pointer z-50" onClick={onClose} />
-                    <h2 className='text-xl font-bold text-[16px] md:text-base py-4'>Application for: <span className="font-semibold">{jobTitle}</span></h2>
-                    <form onSubmit={handleApplied}>
-                        <div className="flex flex-col gap-4">
+                    <GrClose className="absolute -right-2 -top-2 md:-top-4 cursor-pointer z-50" onClick={onClose} />
+                    {
+                        user?.email ? <>
+                            <h2 className='text-xl font-bold text-[16px] md:text-base py-4'>Application for: <span className="font-semibold">{jobTitle}</span></h2>
+                            <form onSubmit={handleApplied}>
+                                <div className="flex flex-col gap-4">
 
-                            <div className="flex flex-col md:flex-row gap-4">
-                                <input className="border w-full focus:outline-none rounded-sm p-1" type="text" defaultValue={user?.displayName} name="candidateName" />
-                                <input className="border w-full focus:outline-none rounded-sm p-1" type="email" defaultValue={user?.email} name='candidateEamil' />
-                            </div>
-                            <div className="flex flex-col md:flex-row gap-4">
-                                <input className="border w-full focus:outline-none rounded-sm p-1" type="link" placeholder="Resume link" name='resumeLink' />
-                            </div>
-                            <div>
-                                <input className="border-[#153CF5] w-full border py-1 px-2 md:px-4 rounded-sm bg-[#153CF5] hover:bg-[#153af5c7] text-white block md:text-base'" type="submit" value="Submit Application" />
-                            </div>
-                        </div>
-                    </form>
+                                    <div className="flex flex-col md:flex-row gap-4">
+                                        <input className="border w-full focus:outline-none rounded-sm p-1" type="text" defaultValue={user?.displayName} name="candidateName" />
+                                        <input className="border w-full focus:outline-none rounded-sm p-1" type="email" defaultValue={user?.email} name='candidateEamil' />
+                                    </div>
+                                    <div className="flex flex-col md:flex-row gap-4">
+                                        <input className="border w-full focus:outline-none rounded-sm p-1" type="link" placeholder="Resume link" name='resumeLink' />
+                                    </div>
+                                    <div>
+                                        <input className="border-[#153CF5] w-full border py-1 px-2 md:px-4 rounded-sm bg-[#153CF5] hover:bg-[#153af5c7] text-white block md:text-base'" type="submit" value="Submit Application" />
+                                    </div>
+                                </div>
+                            </form>
+                        </> : <>
+                            <p className='text-center'>Please<Link className='text-blue-700' state={location.pathname} to={'/signin'}> signIn</Link> now</p>
+
+                        </>
+                    }
+
                 </div>
             </div>
         </div>

@@ -5,22 +5,25 @@ import Loading from "../loading/Loading";
 import JobTab from "../jobTabs/JobTab";
 import useJobs from "../../hooks/useJobs";
 import { Tab, TabList, Tabs } from "react-tabs";
+import axios from "axios";
+import AppliedJobSummary from "./AppliedJobSummary";
 
 const AppliedJobs = () => {
     const { user } = useContext(AuthContext);
     const [appliedJob, setAppliedJob] = useState([]);
     const [allJob, setAllJob] = useState([])
 
-    const url = `https://brand-server-pi.vercel.app/appliedjob?email=${user?.email}`;
+    const url = `https://assignment11-five.vercel.app/appliedjob?email=${user?.email}`;
     useEffect(() => {
-        fetch(url, {
-            credentials: "include"
-        })
-            .then(res => res.json())
-            .then(data => {
+        axios.get(url, { withCredentials: true })
+            .then(response => {
+                const data = response.data;
                 setAppliedJob(data);
                 setAllJob(data);
             })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
     }, [user]);
 
 
@@ -50,6 +53,7 @@ const AppliedJobs = () => {
     return (
         <div>
             <div className='py-16 max-w-6xl mx-auto'>
+                <div><AppliedJobSummary allJob={allJob} /></div>
                 <Tabs>
                     <TabList>
                         <Tab onClick={() => handleJobsFilter("all")} key="all">
