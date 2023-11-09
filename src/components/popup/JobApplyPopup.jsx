@@ -3,10 +3,13 @@ import { GrClose } from 'react-icons/gr';
 import { AuthContext } from './../../providers/AuthProvider';
 import { toast } from 'react-toastify';
 import { Link, Navigate } from 'react-router-dom';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 
 const Popup = ({ isOpen, onClose, job, refetch }) => {
     const { user } = useContext(AuthContext);
+    const userEmail_ = user?.email
     const { _id, jobTitle, category, postbanner, salary, description, gender, qualification, eduRequirements, applied, postBy, postEmail, expirationDate, statement, location } = job;
 
 
@@ -20,6 +23,25 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
         const applyFor = {
             candidateName, candidateEamil, resumeLink, jobTitle, category, postbanner, salary, description, gender, qualification, eduRequirements, applied, postBy, postEmail, expirationDate, statement, location
         }
+
+        const templateParams = {
+            candidateName,
+            userEmail_,
+            jobTitle,
+        };
+
+        emailjs
+            .send('service_0dkd1xe', 'template_odzw0rp', templateParams, 'a7CZvHvebnYjPTy5h')
+            .then(
+                (result) => {
+                    console.log(result.text);
+                    toast.success('Job applied successfully, and email sent!');
+                },
+                (error) => {
+                    console.log(error.text);
+                    toast.error('Job applied, but email sending failed.');
+                }
+            );
 
 
         fetch('https://assignment11-five.vercel.app/appliedjob', {
