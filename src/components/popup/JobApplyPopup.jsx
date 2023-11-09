@@ -44,7 +44,7 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
             );
 
 
-        fetch('https://assignment11-five.vercel.app/appliedjob', {
+        fetch('https://assignment11-five.vercel.app/applied', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
