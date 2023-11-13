@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { BsPeople } from 'react-icons/bs';
 import Popup from "../popup/JobApplyPopup";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
 
 
@@ -64,9 +65,13 @@ const JobDetails = () => {
 
     return (
         <div className="bg-[#F5F7FF]">
-            <div className="bg-[url(https://i.ibb.co/ncjQDJS/Rectangle-15.png)] py-16">
-                <div className=" h-72 flex items-center justify-center">
-                    <h1 className='text-4xl text-white font-bold mb-2'>Job Details</h1>
+            <Helmet>
+                <title>Career Link | Job details</title>
+                <meta name="description" content="Nested component" />
+            </Helmet>
+            <div className="bg-[url(https://i.ibb.co/ncjQDJS/Rectangle-15.png)]">
+                <div className=" h-[40vh] md:h-[60vh] flex items-center justify-center">
+                    <h1 className='text-4xl text-white font-bold mb-2'>Jobs Details</h1>
                 </div>
             </div>
             <div className="max-w-6xl mx-auto  py-4">

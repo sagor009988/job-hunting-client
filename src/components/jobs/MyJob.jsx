@@ -98,21 +98,21 @@ const MyJob = ({ job }) => {
                             <p className='text-[#45A600] font-semibold hidden md:visible'>
                                 {postBy}
                             </p>
-                            <div className='hidden md:flex gap-1 top-0 right-0  font-semibold items-center text-[10px] md:text-base'>
+                            <div className='hidden md:flex gap-1 top-0 right-0  font-semibold items-center text-[10px] md:text-[13px]'>
                                 <BiTime />
                                 {
                                     remainingTime == 'Expired' ? <p className="text-[red]">{remainingTime}</p> : <p>{remainingTime}</p>
                                 }
                             </div>
-                            <div className='hidden md:flex gap-1 top-0 right-0  font-semibold items-center text-[10px] md:text-base'>
+                            <div className='hidden md:flex gap-1 top-0 right-0  font-semibold items-center text-[10px] md:text-[13px]'>
                                 <BiTime />
                                 <p>$ Salary: {salary}</p>
                             </div>
-                            <div className='flex gap-1 font-semibold items-center text-[10px] md:text-base'>
+                            <div className='flex gap-1 font-semibold items-center text-[10px] md:text-[13px]'>
                                 <CiLocationOn />
                                 <p>{location}</p>
                             </div>
-                            <div className='flex gap-1 font-semibold items-center text-[10px] md:text-base'>
+                            <div className='flex gap-1 font-semibold items-center text-[10px] md:text-[13px]'>
                                 <BsPeople />
                                 <p>Applied: {applied} </p>
                             </div>

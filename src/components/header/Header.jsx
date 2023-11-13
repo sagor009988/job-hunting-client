@@ -57,7 +57,6 @@ const Header = () => {
                             <li className="text-xl">
                                 <NavLink to="/alljobs" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-black font-semibold" : ""}>All Job</NavLink>
                             </li>
-
                             {
                                 user ? <>
                                     <li className="text-xl">
@@ -71,6 +70,9 @@ const Header = () => {
                                     </li>
                                 </> : ''
                             }
+                            <li className="text-xl">
+                                <NavLink to="/blogpage" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active text-black font-semibold" : ""}>Blogs</NavLink>
+                            </li>
 
                             {
                                 user ? <>

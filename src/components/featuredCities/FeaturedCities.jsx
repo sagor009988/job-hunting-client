@@ -12,21 +12,21 @@ const FeaturedCities = () => {
                     <div className="bg-white rounded-lg p-4">
                         <img className="w-full" src="https://i.ibb.co/mtx6p75/Rectangle-664-3.png" alt="" />
                         <div className="mt-4">
-                            <h2 className="font-bold text-black">Silicon valley,USA</h2>
-                            <p>40 Jobs</p>
+                            <h2 className="font-bold text-black">Alabama ,USA</h2>
+                            <p>50 Jobs</p>
                         </div>
                     </div>
                     <div className="bg-white rounded-lg p-4">
                         <img className="w-full" src="https://i.ibb.co/DQZ7brL/Rectangle-664-2.png" alt="" />
                         <div className="mt-4">
                             <h2 className="font-bold text-black">Silicon valley,USA</h2>
-                            <p>40 Jobs</p>
+                            <p>23 Jobs</p>
                         </div>
                     </div>
                     <div className="bg-white rounded-lg p-4">
                         <img className="w-full" src="https://i.ibb.co/gvPdKZ3/Rectangle-664-1.png" alt="" />
                         <div className="mt-4">
-                            <h2 className="font-bold text-black">Silicon valley,USA</h2>
+                            <h2 className="font-bold text-black">Arkansas,USA</h2>
                             <p>40 Jobs</p>
                         </div>
                     </div>

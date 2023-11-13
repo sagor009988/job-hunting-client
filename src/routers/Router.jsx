@@ -13,7 +13,7 @@ import AllJobs from "../pages/allJobs/AllJobs";
 import PrivateRoute from './PrivateRoute';
 import Error from './../pages/404';
 import SingleBlgs from "../components/bolgs/SingleBlgs";
-import BlogsPage from "../pages/signUp/BlogsPage";
+import BlogsPage from "../pages/BlogsPage";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/job/:id',
-                element: <JobDetails />,
+                element: <PrivateRoute><JobDetails /></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://assignment11-five.vercel.app/job/${params.id}`)
             },
             {
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'blog/:id',
-                element: <SingleBlgs />,
+                element: <PrivateRoute><SingleBlgs /></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://assignment11-five.vercel.app/blogs/${params.id}`)
             },
             {

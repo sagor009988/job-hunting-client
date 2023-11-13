@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import Banner from '../../components/banner/Banner';
 import SignUpBanner from '../../components/banner/SignUpBanner';
 import Bolgs from '../../components/bolgs/Blogs';
@@ -10,6 +11,10 @@ import JobTabs from '../../components/jobTabs/JobTabs';
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>Career Link | Home</title>
+                <meta name="description" content="Nested component" />
+            </Helmet>
             <div>
                 <Banner />
             </div>

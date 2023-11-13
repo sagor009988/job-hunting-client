@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import AppliedJob from "./AppliedJob";
 import Loading from "../loading/Loading";
 import JobTab from "../jobTabs/JobTab";
 import useJobs from "../../hooks/useJobs";
 import { Tab, TabList, Tabs } from "react-tabs";
 import axios from "axios";
 import AppliedJobSummary from "./AppliedJobSummary";
+import { Helmet } from "react-helmet";
+import AppliedJob from "./AppliedJob";
 
 const AppliedJobs = () => {
     const { user } = useContext(AuthContext);
@@ -53,6 +54,10 @@ const AppliedJobs = () => {
     return (
         <div>
             <div className='py-16 max-w-6xl mx-auto'>
+                <Helmet>
+                    <title>Career Link | Applied jobs</title>
+                    <meta name="description" content="Nested component" />
+                </Helmet>
                 <div><AppliedJobSummary allJob={allJob} /></div>
                 <Tabs>
                     <TabList>
@@ -74,7 +79,7 @@ const AppliedJobs = () => {
                                 <p>No data found</p>
                             </div>
                         </> : <>
-                            {appliedJob?.slice(0, showVal)?.map((job) => <JobTab key={job._id} job={job} refetch={refetch} />)}
+                            {appliedJob?.slice(0, showVal)?.map((job) => <AppliedJob key={job._id} job={job} refetch={refetch} />)}
 
                             {
                                 appliedJob?.length > showVal ? (

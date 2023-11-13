@@ -21,7 +21,7 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
         const resumeLink = form.resumeLink.value;
 
         const applyFor = {
-            candidateName, candidateEamil, resumeLink, jobTitle, category, postbanner, salary, description, gender, qualification, eduRequirements, applied, postBy, postEmail, expirationDate, statement, location
+            candidateName, candidateEamil, resumeLink, jobTitle, category, postbanner, salary, description, gender, qualification, eduRequirements, applied, postBy, postEmail, expirationDate, statement, location, applidId:_id
         }
 
         const templateParams = {
@@ -99,7 +99,7 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
                                 </div>
                             </form>
                         </> : <>
-                            <p className='text-center'>Please<Link className='text-blue-700' state={location.pathname} to={'/signin'}> signIn</Link> now</p>
+                            <p className='text-center'>Please<Link className='text-blue-700' state={location.pathname} to={'/signin'}> signIn</Link> firrst</p>
 
                         </>
                     }

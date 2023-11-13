@@ -4,7 +4,9 @@ import useJobs from '../../hooks/useJobs';
 import { useEffect, useState } from 'react';
 import '../../components/jobTabs/tab.css';
 import Loading from '../../components/loading/Loading';
-import JobTab from '../../components/jobTabs/JobTab'; 
+import JobTab from '../../components/jobTabs/JobTab';
+import { Helmet } from 'react-helmet';
+
 
 
 const AllJobs = () => {
@@ -21,14 +23,15 @@ const AllJobs = () => {
         e.preventDefault();
         const text = e.target.searchText.value;
         const filterData = data?.jobs.filter((job) =>
-            job.jobTitle.toLowerCase().includes(text.toLowerCase())
+            job?.jobTitle?.toLowerCase().includes(text.toLowerCase())
         );
         setTabJobs(filterData);
+        console.log(text);
     }
 
 
     useEffect(() => {
-        if (ctgName === "all") {
+        if (ctgName == "all") {
             setTabJobs(data?.jobs);
         } else {
             const filterData = data?.jobs.filter((job) => ctgName == job.category);
@@ -48,10 +51,14 @@ const AllJobs = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Career Link | All job</title>
+                <meta name="description" content="Nested component" />
+            </Helmet>
             <div className='max-w-6xl mx-auto'>
                 <div className='py-8 text-center'>
-                    <form onSubmit={handleSearch} className='w-full '>
-                        <input className="p-2 w-1/3 focus:outline-0 rounded-l-sm border" placeholder="Search job with name" type="text" name="searchText" />
+                    <form onSubmit={handleSearch} className='w-full flex justify-center'>
+                        <input className="p-2 w-[80%] md:w-1/3 focus:outline-0 rounded-l-sm border" placeholder="Search job with name" type="text" name="searchText" />
                         <input className="p-2 rounded-r-sm bg-[#153CF5] w-28 text-white" type="submit" value="Search" />
                     </form>
                 </div>

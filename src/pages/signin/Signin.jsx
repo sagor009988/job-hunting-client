@@ -4,6 +4,7 @@ import { RiLockPasswordLine } from 'react-icons/ri';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../providers/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 
 const Signin = () => {
@@ -68,6 +69,10 @@ const Signin = () => {
 
     return (
         <div className="relative bg-[url('https://i.ibb.co/kMFCXF9/img-2.png')] bg-no-repeat bg-left-top bg-[#f3f3f3]  dark:bg-[#121212]">
+            <Helmet>
+                <title>Career Link | Sign in</title>
+                <meta name="description" content="Nested component" />
+            </Helmet>
             <div className="absolute right-0 bottom-0 bg-[url('https://i.ibb.co/SBVLKSc/img-1.png')] bg-no-repeat bg-right-bottom w-1/2 h-1/2">
                 {/* The above div creates the second background image on the right-bottom */}
             </div>

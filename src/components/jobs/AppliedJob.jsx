@@ -1,11 +1,11 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { BiTime } from 'react-icons/bi';
-import { BsPeople } from 'react-icons/bs';
+import { BsPeople, BsLink45Deg } from 'react-icons/bs';
 import { CiLocationOn } from 'react-icons/ci';
 
 
 const AppliedJob = ({ job }) => {
-    const { _id, jobTitle, category, postbanner, salary, description, gender, qualification, eduRequirements, applied, postBy, postEmail, expirationDate, statement, location } = job;
+    const { _id, jobTitle, category, postbanner, salary, description, gender, qualification, eduRequirements, applied, postBy, postEmail, expirationDate, statement, location, resumeLink, applidId } = job;
 
     return (
         <div>
@@ -30,15 +30,15 @@ const AppliedJob = ({ job }) => {
                                     <p>$ Salary: {salary}</p>
                                 </div>
                                 <div className='flex gap-1 font-semibold items-center text-[10px] md:text-base'>
-                                    <BsPeople />
-                                    <p>Applied: {applied} </p>
+                                    <BsLink45Deg />
+                                    <Link className="text-blue-700 font-medium" to={resumeLink}>See resume</Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className='flex items-center gap-2'>
                         <div>
-                            <Link to={`/job/${_id}`} className='border-[#153CF5] border py-1 px-2 md:px-4 rounded-sm hover.bg-[#153CF5] hover.text-white block text-[10px] md:text-base'>
+                            <Link to={`/job/${applidId}`} className='border-[#153CF5] border py-1 px-2 md:px-4 rounded-sm hover.bg-[#153CF5] hover.text-white block text-[10px] md:text-base'>
                                 View Job
                             </Link>
                         </div>

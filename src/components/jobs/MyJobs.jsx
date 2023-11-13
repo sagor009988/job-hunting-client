@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import MyJob from './MyJob';
 import { AuthContext } from '../../providers/AuthProvider';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const MyJobs = () => {
     const { user } = useContext(AuthContext);
@@ -20,8 +21,12 @@ const MyJobs = () => {
 
     return (
         <div>
-            <div className="bg-[url(https://i.ibb.co/ncjQDJS/Rectangle-15.png)] py-16">
-                <div className=" h-72 flex items-center justify-center">
+            <Helmet>
+                <title>Career Link | My job</title>
+                <meta name="description" content="Nested component" />
+            </Helmet>
+            <div className="bg-[url(https://i.ibb.co/ncjQDJS/Rectangle-15.png)]">
+                <div className=" h-[40vh] md:h-[60vh] flex items-center justify-center">
                     <h1 className='text-4xl text-white font-bold mb-2'>My Jobs</h1>
                 </div>
             </div>

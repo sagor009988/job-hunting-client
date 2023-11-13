@@ -18,15 +18,15 @@ const HowWork = () => {
                 <div>
                     <img className='mx-auto mb-4' src="https://i.ibb.co/thWjqsw/Rectangle-9-1.png" alt="" />
                     <div>
-                        <h2 className='text-[#26272D]  text-center text-xl font-bold'>Free Resume Assessments</h2>
-                        <p className='text-[#26272D] text-center mt-2 '>Employers on average spend 31 seconds scanning resumes to identify potential matches.</p>
+                        <h2 className='text-[#26272D]  text-center text-xl font-bold'>Job Fit Scoring</h2>
+                        <p className='text-[#26272D] text-center mt-2 '>Our new fit meter shows you which jobs are most relevant to your skills and interests.</p>
                     </div>
                 </div>
                 <div>
                     <img className='mx-auto mb-4' src="https://i.ibb.co/M5w8yCT/Rectangle-9-2.png" alt="" />
                     <div>
-                        <h2 className='text-[#26272D]  text-center text-xl font-bold'>Free Resume Assessments</h2>
-                        <p className='text-[#26272D] text-center mt-2 '>Employers on average spend 31 seconds scanning resumes to identify potential matches.</p>
+                        <h2 className='text-[#26272D]  text-center text-xl font-bold'>Help Center</h2>
+                        <p className='text-[#26272D] text-center mt-2 '>Visit our Help Center for job portal support. Find answers, troubleshoot, and optimize your experience. We're here to help!</p>
                     </div>
                 </div>
             </div>
