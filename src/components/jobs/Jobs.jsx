@@ -50,7 +50,7 @@ const JobTabs = () => {
                                                 <div className='flex gap-4 flex-col justify-center'>
                                                     <h2 className='text-2xl font-semibold'>{job.jobTitle}</h2>
                                                     <div className='flex gap-6 items-center'>
-                                                        <p className='text-[#153CF5] font-semibold'>{job.postedBy}</p>
+                                                        <p className='text-[#D2DE32] font-semibold'>{job.postedBy}</p>
                                                         <div className='flex gap-1 font-semibold items-center'>
                                                             <BiTime />
                                                             <p>{job.category}</p>
@@ -68,10 +68,10 @@ const JobTabs = () => {
                                             </div>
                                             <div className='flex items-center gap-8'>
                                                 <div>
-                                                    <Link to={`/job/${job._id}`} className='border-[#153CF5] border py-1 px-4 rounded-sm hover:bg-[#153CF5] hover:text-white'>View Job</Link>
+                                                    <Link to={`/job/${job._id}`} className='border-[#D2DE32] border py-1 px-4 rounded-sm hover:bg-[#D2DE32] hover:text-white'>View Job</Link>
                                                 </div>
                                                 <div>
-                                                    <button className='bg-[#153CF5] py-1 px-4 rounded-sm hover:bg-[#1bbf72d0] text-white'>Apply Now</button>
+                                                    <button className='bg-[#D2DE32] py-1 px-4 rounded-sm hover:bg-[#1bbf72d0] text-white'>Apply Now</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -82,7 +82,7 @@ const JobTabs = () => {
                     </TabPanel>
                     <div className='flex items-center justify-center py-8'>
                         <div>
-                            <button className='border-[#153CF5] border py-1 px-4 rounded-sm hover:bg-[#153CF5] hover:text-white font-medium'>Load More Jobs</button>
+                            <button className='border-[#D2DE32] border py-1 px-4 rounded-sm hover:bg-[#D2DE32] hover:text-white font-medium'>Load More Jobs</button>
                         </div>
                     </div>
                 </Tabs>

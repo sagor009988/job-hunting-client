@@ -67,7 +67,7 @@ const SignUp = () => {
     return (
         <div className="relative bg-[url('https://i.ibb.co/kMFCXF9/img-2.png')] bg-no-repeat bg-left-top bg-[#f3f3f3] dark:bg-[#121212]">
             <Helmet>
-                <title>Career Link | Sign up</title>
+                <title>Job Hub | Sign up</title>
                 <meta name="description" content="Nested component" />
             </Helmet>
             <div className="absolute right-0 bottom-0 bg-[url('https://i.ibb.co/SBVLKSc/img-1.png')] bg-no-repeat bg-right-bottom w-1/2 h-1/2">
@@ -106,11 +106,11 @@ const SignUp = () => {
                             }
                         </div>
                         <div className="mb-6">
-                            <input className='bg-[#153CF5] text-white  py-2 w-full rounded-sm cursor-pointer' type="submit" value="SignUp" />
+                            <input className='bg-[#D2DE32] text-white  py-2 w-full rounded-sm cursor-pointer' type="submit" value="SignUp" />
                         </div>
                     </form>
                     <div>
-                        <p className='text-center dark:text-white'>Already have an account? <Link to={'/signin'} className='cursor-pointer text-[#153CF5]'>SignIn here</Link></p>
+                        <p className='text-center dark:text-white'>Already have an account? <Link to={'/signin'} className='cursor-pointer text-[#D2DE32]'>SignIn here</Link></p>
                     </div>
                 </div>
             </div>

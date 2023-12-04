@@ -94,7 +94,7 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
                                         <input className="border w-full focus:outline-none rounded-sm p-1" type="link" placeholder="Resume link" name='resumeLink' />
                                     </div>
                                     <div>
-                                        <input className="border-[#153CF5] w-full border py-1 px-2 md:px-4 rounded-sm bg-[#153CF5] hover:bg-[#153af5c7] text-white block md:text-base'" type="submit" value="Submit Application" />
+                                        <input className="border-[#D2DE32] w-full border py-1 px-2 md:px-4 rounded-sm bg-[#D2DE32] hover:bg-[#153af5c7] text-white block md:text-base'" type="submit" value="Submit Application" />
                                     </div>
                                 </div>
                             </form>

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import { GrClose } from 'react-icons/gr';
 import { HiBars3 } from 'react-icons/hi2';
-import { IoIosLogOut } from 'react-icons/io';
+
 import { BsMoonStars, BsSun } from 'react-icons/bs';
 import { AuthContext } from "../../providers/AuthProvider";
 import { useTheme } from "../../hooks/useTheme";
@@ -21,11 +21,11 @@ const Header = () => {
 
     // theme 
 
-    const { changeTheme, setMode, mode } = useTheme();
+    const { changeTheme, mode } = useTheme();
 
 
     return (
-        <div className="bg-[#153CF5] shadow-md">
+        <div className="bg-[#D2DE32] shadow-md">
             {/* mobile and tablet navbar */}
             <nav className="md:flex justify-between items-center py-2 max-w-6xl mx-auto flex lg:hidden p-2 lg:px-0">
                 <ul>
@@ -94,7 +94,7 @@ const Header = () => {
             {/* desktop navbar  */}
             <nav className="md:hidden justify-between items-center py-2 max-w-6xl mx-auto hidden lg:flex">
                 <ul>
-                    <li><NavLink className={'text-xl font-extrabold'}><p className='text-2xl text blod font-bold text-white'>CAREER LINK</p>
+                    <li><NavLink className={'text-xl font-extrabold'}><p className='text-2xl text blod font-bold text-white'>Job News</p>
                     </NavLink></li>
                 </ul>
                 <ul className="flex items-center gap-6">
@@ -131,7 +131,7 @@ const Header = () => {
                                 </li>
                             </ul>
                             <li>
-                                <NavLink onClick={handleSignOutUser} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active font-semibold" : "text-white"}><IoIosLogOut className="text-[1.3rem] text-white" /></NavLink>
+                                <NavLink onClick={handleSignOutUser} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active font-semibold text-white" : "text-white"}>Logout</NavLink>
                             </li>
                         </> :
                             <>

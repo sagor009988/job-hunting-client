@@ -68,12 +68,12 @@ const Signin = () => {
     }
 
     return (
-        <div className="relative bg-[url('https://i.ibb.co/kMFCXF9/img-2.png')] bg-no-repeat bg-left-top bg-[#f3f3f3]  dark:bg-[#121212]">
+        <div className='bg-lime-500'>
             <Helmet>
-                <title>Career Link | Sign in</title>
+                <title>Job News | Sign in</title>
                 <meta name="description" content="Nested component" />
             </Helmet>
-            <div className="absolute right-0 bottom-0 bg-[url('https://i.ibb.co/SBVLKSc/img-1.png')] bg-no-repeat bg-right-bottom w-1/2 h-1/2">
+            <div >
                 {/* The above div creates the second background image on the right-bottom */}
             </div>
             <div className="flex items-center justify-center h-screen w-full max-w-6xl mx-auto">
@@ -97,7 +97,7 @@ const Signin = () => {
                             }
                         </div>
                         <div className="mb-6">
-                            <input className='bg-[#153CF5] text-white py-2 w-full rounded-sm cursor-pointer' type="submit" value="SignIn" />
+                            <input className='bg-[#D2DE32] text-white py-2 w-full rounded-sm cursor-pointer' type="submit" value="SignIn" />
                         </div>
                     </form>
                     <div>
@@ -115,11 +115,11 @@ const Signin = () => {
                             </div>
                         </div>
                         <div className='flex items-center justify-center mb-6 '>
-                            <AiFillFacebook className='text-blue-600 text-3xl dark:text-white' />
-                            <AiFillGoogleSquare onClick={() => handleGoogleSignin()} className='text-red-600 text-3xl cursor-pointer dark:text-white' />
+                           
+                            <AiFillGoogleSquare onClick={() => handleGoogleSignin()} className='text-blue-600 text-5xl cursor-pointer dark:text-white' />
                         </div>
                         <div>
-                            <p className='text-center dark:text-white'>Don't have an account? <Link to={'/signup'} className='cursor-pointer text-[#153CF5]'>Register here</Link></p>
+                            <p className='text-center dark:text-white'>Don't have an account? <Link to={'/signup'} className='cursor-pointer text-[#D2DE32]'>Register here</Link></p>
                         </div>
                     </div>
 

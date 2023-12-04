@@ -60,16 +60,16 @@ const JobTabs = () => {
                             <div className="text-center py-4">
                                 <p>No data found</p>
                             </div>
-                        </> : <>
+                        </> : <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                             {tabJobs?.slice(0, showVal)?.map((job) => <JobTab key={job._id} job={job} refetch={refetch} />)}
-                        </>
+                        </div>
                     }
 
                     {
                         tabJobs?.length > showVal ? (
                             <div className='flex items-center justify-center py-8'>
                                 <div>
-                                    <button onClick={() => setShowVal(showVal + 3)} className='border-[#153CF5] border py-1 px-4 rounded-sm hover:bg-[#153CF5] hover:text-white hover-text-white font-medium'>
+                                    <button onClick={() => setShowVal(showVal + 3)} className='border-[#D2DE32] border py-1 px-4 rounded-sm hover:bg-[#D2DE32] hover:text-white hover-text-white font-medium'>
                                         Load More Jobs
                                     </button>
                                 </div>

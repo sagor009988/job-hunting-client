@@ -22,7 +22,7 @@ const MyJobs = () => {
     return (
         <div>
             <Helmet>
-                <title>Career Link | My job</title>
+                <title>Job Hub | My job</title>
                 <meta name="description" content="Nested component" />
             </Helmet>
             <div className="bg-[url(https://i.ibb.co/ncjQDJS/Rectangle-15.png)]">
@@ -33,9 +33,9 @@ const MyJobs = () => {
             <div className="py-16 max-w-6xl mx-auto">
                 {jobs?.length == 0 ? (
                     <p>No jobs found.</p>
-                ) : (
-                    jobs?.map((job) => <MyJob key={job._id} job={job}></MyJob>)
-                )}
+                ) : <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+                    {jobs?.map((job) => <MyJob key={job._id} job={job}></MyJob>)}
+                </div>}
             </div>
         </div>
     );

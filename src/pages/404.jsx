@@ -6,7 +6,7 @@ const Error = () => {
     return (
         <div>
             <Helmet>
-                <title>Career Link | Error</title>
+                <title>Job Hub | Error</title>
                 <meta name="description" content="Nested component" />
             </Helmet>
             <div className='h-screen w-full flex items-center justify-center flex-col'>

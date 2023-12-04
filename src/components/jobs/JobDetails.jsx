@@ -28,9 +28,9 @@ const JobDetails = () => {
             const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
             const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+            // const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-            return `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s remaining`;
+            return `${daysDifference}d ${hoursDifference}h ${minutesDifference}m remaining`;
         } else {
             console.error('Invalid expirationDate format.');
             return 'Invalid date format';
@@ -66,7 +66,7 @@ const JobDetails = () => {
     return (
         <div className="bg-[#F5F7FF]">
             <Helmet>
-                <title>Career Link | Job details</title>
+                <title>Job Hub | Job details</title>
                 <meta name="description" content="Nested component" />
             </Helmet>
             <div className="bg-[url(https://i.ibb.co/ncjQDJS/Rectangle-15.png)]">
@@ -85,7 +85,7 @@ const JobDetails = () => {
                                 <div className='flex gap-0 md:gap-4 flex-col justify-center'>
                                     <h2 className='text-xl font-semibold text-[16px] md:text-base'>{jobTitle}</h2>
                                     <div className='flex gap-2 md:gap-6 items-center'>
-                                        <p className='text-[#45A600] font-semibold hidden md:visible'>
+                                        <p className='text-[#a68800] font-semibold hidden md:visible'>
                                             {postBy}
                                         </p>
                                         <div className='hidden md:flex gap-1 top-0 right-0  font-semibold items-center text-[10px] md:text-base'>
@@ -112,7 +112,7 @@ const JobDetails = () => {
                                 <div>
                                     {
                                         user?.email !== postEmail ? <>
-                                            <button onClick={openPopup} disabled={remainingTime === 'Expired'} className={remainingTime !== 'Expired' ? ' border py-1 px-2 md:px-4 rounded-sm bg-[#153CF5] hover.bg-[#153af5d6] text-white block text-[10px]  md:text-base' : ' border py-1 px-2 md:px-4 rounded-sm bg-[#153af58e]  text-white block text-[10px] md:text-base'}>
+                                            <button onClick={openPopup} disabled={remainingTime === 'Expired'} className={remainingTime !== 'Expired' ? ' border py-1 px-2 md:px-4 rounded-sm bg-[#D2DE32] hover.bg-[#153af5d6] text-white block text-[10px]  md:text-base' : ' border py-1 px-2 md:px-4 rounded-sm bg-[#f1c40f78]  text-white block text-[10px] md:text-base'}>
                                                 Apply Now
                                             </button></> : null
                                     }

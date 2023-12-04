@@ -29,7 +29,7 @@ const AppliedJobSummary = ({ allJob }) => {
 
     return (
         <div className='text-right'>
-            <button className='bg-blue-700 py-1 px-2 rounded-sm text-[10px] md:text-base text-white' onClick={handleDownloadPDF}>Download PDF</button>
+            <button className='bg-[#D2DE32] py-1 px-2 rounded-sm text-[10px] md:text-base text-white' onClick={handleDownloadPDF}>Download PDF</button>
         </div>
     );
 };

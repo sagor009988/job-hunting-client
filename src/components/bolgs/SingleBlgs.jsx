@@ -8,7 +8,7 @@ const SingleBlgs = () => {
     return (
         <div className='max-w-6xl mx-auto py-16 '>
             <Helmet>
-                <title>Career Link | blog details</title>
+                <title>Job Hub | blog details</title>
                 <meta name="description" content="Nested component" />
             </Helmet>
             <div>

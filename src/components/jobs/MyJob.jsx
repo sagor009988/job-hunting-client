@@ -21,9 +21,9 @@ const MyJob = ({ job }) => {
             const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
             const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+            // const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-            return `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s remaining`;
+            return `${daysDifference}d ${hoursDifference}h ${minutesDifference}m  remaining`;
         } else {
             console.error('Invalid expirationDate format.');
             return 'Invalid date format';
@@ -87,15 +87,15 @@ const MyJob = ({ job }) => {
 
     return (
         <div key={_id} className='bg-white dark-bg-[#26272D]'>
-            <div className='flex mt-6 p-4 border shadow-sm rounded justify-between'>
-                <div className='flex gap-1 md:gap-2'>
+            <div className='flex flex-col mt-6 p-4 border shadow-sm rounded justify-between'>
+                <div className='flex flex-col gap-1 md:gap-2'>
                     <div>
                         <img className='w-[60px] md:w-[80px]' src={postbanner} alt={postbanner} />
                     </div>
-                    <div className='flex gap-0 md:gap-4 flex-col justify-center'>
+                    <div className='flex  gap-0 md:gap-4 flex-col justify-center'>
                         <h2 className='text-xl font-semibold text-[16px] md:text-base'>{jobTitle}</h2>
-                        <div className='flex gap-2 md:gap-6 items-center'>
-                            <p className='text-[#45A600] font-semibold hidden md:visible'>
+                        <div className='flex flex-col'>
+                            <p className='text-[#a68800] font-semibold hidden md:visible'>
                                 {postBy}
                             </p>
                             <div className='hidden md:flex gap-1 top-0 right-0  font-semibold items-center text-[10px] md:text-[13px]'>
@@ -119,9 +119,9 @@ const MyJob = ({ job }) => {
                         </div>
                     </div>
                 </div>
-                <div className='flex items-center gap-2'>
+                <div className='flex items-center gap-2 mt-4 justify-between'>
                     <div>
-                        <Link to={`/updatesjob/${_id}`} className='border-[#153CF5] border py-1 px-2 md:px-4 rounded-sm hover.bg-[#153CF5] hover.text-white block text-[10px] md:text-base'>
+                        <Link to={`/updatesjob/${_id}`} className='border-[#D2DE32] border py-1 px-2 md:px-4 rounded-sm hover.bg-[#D2DE32] hover.text-white block text-[10px] md:text-base'>
                             Update
                         </Link>
                     </div>

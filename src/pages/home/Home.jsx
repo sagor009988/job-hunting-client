@@ -1,22 +1,23 @@
 import { Helmet } from 'react-helmet';
-import Banner from '../../components/banner/Banner';
+
 import SignUpBanner from '../../components/banner/SignUpBanner';
 import Bolgs from '../../components/bolgs/Blogs';
 import Campaign from '../../components/campaign/Campaign';
 import FeaturedCities from '../../components/featuredCities/FeaturedCities';
 import HowWork from '../../components/howWork/HowWork';
 import JobTabs from '../../components/jobTabs/JobTabs';
+import Banner2 from '../../components/banner/Banner';
 
 
 const Home = () => {
     return (
-        <div>
+        <div className='bg-yellow-100'>
             <Helmet>
-                <title>Career Link | Home</title>
+                <title>Job Hub | Home</title>
                 <meta name="description" content="Nested component" />
             </Helmet>
             <div>
-                <Banner />
+                <Banner2></Banner2>
             </div>
             <div>
                 <HowWork />

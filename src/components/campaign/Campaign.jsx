@@ -6,7 +6,7 @@ const Campaign = () => {
             <div className="flex flex-col gap-8 md:gap-4 md:flex-row items-center justify-end py-16">
                 <div className="flex-1 order-last md:order-first">
                     <h2 className='text-4xl text-[#020A31] text-center md:text-left font-bold mb-4'>
-                        Check out our <span className="text-[#153CF5]">Job Board</span> to discover <br /> great companies that are already hiring
+                        Check out our <span className="text-[#D2DE32]">Job Board</span> to discover <br /> great companies that are already hiring
                     </h2>
                 </div>
                 <div className="flex order-first md:order-last justify-center md:justify-end">

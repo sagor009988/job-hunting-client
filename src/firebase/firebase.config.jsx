@@ -5,15 +5,22 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey:import.meta.env.VITE_APIKEY,
+//   authDomain:import.meta.env.VITE_AUTHDOMAIN,
+//   projectId:import.meta.env.VITE_PROJECTID,
+//   storageBucket:import.meta.env.VITE_STORAGEBUCKET,
+//   messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
+//   appId:import.meta.env.VITE_APPID,
+// };
 const firebaseConfig = {
-  apiKey: "AIzaSyA3IjGKh8dY9BG1S4PWU1zzEeH_qcpwfSE",
-  authDomain: "assignment11-f53fd.firebaseapp.com",
-  projectId: "assignment11-f53fd",
-  storageBucket: "assignment11-f53fd.appspot.com",
-  messagingSenderId: "924154464340",
-  appId: "1:924154464340:web:82e97fa88f7409bd0505c1"
+  apiKey: "AIzaSyCbLEnbOf-_D8ck1AqCiqnuc9CINhyxfZM",
+  authDomain: "job-seeking-web.firebaseapp.com",
+  projectId: "job-seeking-web",
+  storageBucket: "job-seeking-web.appspot.com",
+  messagingSenderId: "171229348135",
+  appId: "1:171229348135:web:2d8c35bb91c28259a56902"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

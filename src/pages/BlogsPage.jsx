@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Helmet } from 'react-helmet';
 import Blogs from './../components/bolgs/Blogs';
 
@@ -6,7 +6,7 @@ const BlogsPage = () => {
     return (
         <div>
             <Helmet>
-                <title>Career Link | Blogs</title>
+                <title>Job news | Blogs</title>
                 <meta name="description" content="Nested component" />
             </Helmet>
             <Blogs />
