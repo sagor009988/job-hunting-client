@@ -14,7 +14,7 @@ const AppliedJobs = () => {
     const [appliedJob, setAppliedJob] = useState([]);
     const [allJob, setAllJob] = useState([])
 
-    const url = `https://assignment11-five.vercel.app/appliedjob?email=${user?.email}`;
+    const url = `https://server-navy-theta.vercel.app/appliedjob?email=${user?.email}`;
     useEffect(() => {
         axios.get(url, { withCredentials: true })
             .then(response => {

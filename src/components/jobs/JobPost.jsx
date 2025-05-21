@@ -47,7 +47,7 @@ const JobPost = () => {
         };
  
 
-        fetch('https://assignment11-five.vercel.app/jobs', {
+        fetch('https://server-navy-theta.vercel.app/jobs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -64,7 +64,7 @@ const JobPost = () => {
     };
 
     useEffect(() => {
-        fetch('https://assignment11-five.vercel.app/categories')
+        fetch('https://server-navy-theta.vercel.app/categories')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

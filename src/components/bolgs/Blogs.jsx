@@ -3,7 +3,7 @@ import Blog from './Blog';
 const Blogs = () => {
     const [blogs, setBlogs] = useState([])
     useEffect(() => {
-        fetch(`https://assignment11-five.vercel.app/blogs`)
+        fetch(`https://server-gqpyn78t7-sohel-ranas-projects-3e3e749a.vercel.app`)
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])

@@ -8,7 +8,7 @@ const MyJobs = () => {
     const { user } = useContext(AuthContext);
     const [jobs, setJobs] = useState([]);
 
-    const url = `https://assignment11-five.vercel.app/myjobs?email=${user?.email}`;
+    const url = `https://server-navy-theta.vercel.app/myjobs?email=${user?.email}`;
     useEffect(() => {
         axios.get(url, { withCredentials: true })
             .then(response => {

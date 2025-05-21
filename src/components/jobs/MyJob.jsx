@@ -47,7 +47,7 @@ const MyJob = ({ job }) => {
 
 
     // const handleDeteleJob = (_id) => {
-    //     fetch(`https://assignment11-five.vercel.app/jobsDelete/${_id}`, {
+    //     fetch(`https://server-navy-theta.vercel.app/jobsDelete/${_id}`, {
     //         method: 'DELETE'
     //     })
     //         .then(res => toast.success('Job deleted successfully.'))
@@ -65,7 +65,7 @@ const MyJob = ({ job }) => {
         }).then(willDelete => {
             if (willDelete) {
 
-                fetch(`https://assignment11-five.vercel.app/jobsDelete/${_id}`, {
+                fetch(`https://server-navy-theta.vercel.app/jobsDelete/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => toast.success('Job deleted successfully.'))

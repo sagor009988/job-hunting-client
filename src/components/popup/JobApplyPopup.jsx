@@ -44,7 +44,7 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
             );
 
 
-        fetch('https://assignment11-five.vercel.app/newapplied', {
+        fetch('https://server-navy-theta.vercel.app/newapplied', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -57,7 +57,7 @@ const Popup = ({ isOpen, onClose, job, refetch }) => {
 
 
         const newCount = parseInt(applied) + 1;
-        fetch(`https://assignment11-five.vercel.app/count/${_id}`, {
+        fetch(`https://server-navy-theta.vercel.app/count/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

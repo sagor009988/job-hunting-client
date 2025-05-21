@@ -7,8 +7,8 @@ const useJobs = () => {
         queryKey: ['services'],
         queryFn: async () => {
             try {
-                const response1 = await axios.get('https://assignment11-five.vercel.app/jobs'); 
-                const response2 = await axios.get('https://assignment11-five.vercel.app/categories');
+                const response1 = await axios.get('https://server-navy-theta.vercel.app/jobs'); 
+                const response2 = await axios.get('https://server-navy-theta.vercel.app/categories');
                 // send response
                 if (response1.status !== 200 || response2.status !== 200) {
                     throw new Error('Network response was not ok');

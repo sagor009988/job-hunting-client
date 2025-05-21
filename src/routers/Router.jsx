@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             {
                 path: '/job/:id',
                 element: <PrivateRoute><JobDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://assignment11-five.vercel.app/job/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-navy-theta.vercel.app/job/${params.id}`)
             },
             {
                 path: 'jobpost',
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
             {
                 path: 'updatesjob/:id',
                 element: <UpdateJobPost />,
-                loader: ({ params }) => fetch(`https://assignment11-five.vercel.app/job/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-navy-theta.vercel.app/job/${params.id}`)
 
             },
             {
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
             {
                 path: 'blog/:id',
                 element: <PrivateRoute><SingleBlgs /></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://assignment11-five.vercel.app/blogs/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-navy-theta.vercel.app/${params.id}`)
             },
             {
                 path: 'blogpage',
