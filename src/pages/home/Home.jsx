@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <div className='bg-yellow-100'>
             <Helmet>
-                <title>Job Hub | Home</title>
+                <title>Job Hub || Home</title>
                 <meta name="description" content="Nested component" />
             </Helmet>
             <div>
