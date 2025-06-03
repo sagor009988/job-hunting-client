@@ -6,7 +6,7 @@ const Blogs = () => {
         fetch(`https://server-gqpyn78t7-sohel-ranas-projects-3e3e749a.vercel.app`)
             .then(res => res.json())
             .then(data => setBlogs(data))
-    }, [])
+    }, []);
 
     return (
         <div className="py-16">
